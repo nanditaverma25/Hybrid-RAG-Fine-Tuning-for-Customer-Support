@@ -1,0 +1,17 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+torch
+transformers
+datasets
+accelerate
+peft
+bitsandbytes
+sentence-transformers
+chromadb
+langchain
+langchain-community
+rouge-score
+nltk
