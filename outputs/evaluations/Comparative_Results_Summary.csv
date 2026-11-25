@@ -1,0 +1,4 @@
+Architecture,Samples,Router_Format_Adherence_%,Router_Exact_Match_%,Router_Fuzzy_Match_%,ROUGE-1,ROUGE-2,ROUGE-L,BLEU,Avg_Latency_s
+Baseline (LLM Only),50,,,,0.3398,0.1367,0.2748,0.0597,1.112
+Naive RAG (Vector Query),50,,,,0.4502,0.2576,0.3776,0.1718,2.069
+Hybrid RAG (Fine-Tuned Router + SOP Retrieval),50,100.0,28.0,32.0,0.2301,0.0634,0.1479,0.0248,5.635

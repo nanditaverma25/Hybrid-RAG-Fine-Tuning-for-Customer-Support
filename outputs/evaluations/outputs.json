@@ -1,0 +1,8 @@
+{
+  "test_query": "My order hasn't arrived yet. How long does domestic shipping usually take and how do I track it?",
+  "ground_truth": "Domestic orders deliver within 3-7 business days.",
+  "baseline_output": "I'm sorry to hear that your order has not arrived yet. The time it takes for an order to arrive can vary depending on the shipping method you choose, but generally, standard shipping methods in the United States typically take 3-5 business days from the date of shipment.\n\nTo track your order, please visit the website or app where you placed your order and look for an option to view \"tracking information.\" This will provide you with real-time updates on the status of your package as well as any estimated delivery dates. If you have already placed an order and haven't received it within this timeframe",
+  "hallucination_notes": "Without access to internal corporate SOP documents, the zero-shot base model relies on general pre-training assumptions rather than company-specific policy ('3-7 business days'). It either guesses generic shipping windows (e.g., 3–5 or 5–10 days) or fabricates generic tracking steps/portals not grounded in our knowledge base—demonstrating why Stage 3 (RAG) is required.",
+  "naive_rag_retrieved_source": "corporate_policies/shipping_delays.md",
+  "naive_rag_output": "Domestic shipping typically takes around 3-7 business days. To track your order, you should check the carrier's website or use the tracking number provided with your invoice. This will show you the current status of your package, including any updates from the carrier. If there are any issues or concerns, please contact our customer service team for assistance."
+}

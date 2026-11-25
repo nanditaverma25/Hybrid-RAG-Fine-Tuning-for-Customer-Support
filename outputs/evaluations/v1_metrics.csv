@@ -1,0 +1,2224 @@
+row_idx,query,intent,category,baseline_output,rag_output,retrieved_source,retrieved_context,base_rouge1,base_rougel,base_bleu,rag_rouge1,rag_rougel,rag_bleu,base_hallucinated,rag_hallucinated
+9,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I cannot afford order {{Order Number}}<|im_end|>
+<|im_start|>assistant
+{""intent"": ""cancel_order"", ""category"": ""ORDER""}<|im_end|>
+",cancel_order,ORDER,"{""intent"": ""contact_support"", ""category"": ""SERVICE_ISSUE""}","{""intent"": ""cancel_order"", ""category"": ""ORDER""}",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.0,0.0,1.0641373328527978e-09,False,False
+42,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I need assistance to enter another shipping address<|im_end|>
+<|im_start|>assistant
+{""intent"": ""set_up_shipping_address"", ""category"": ""SHIPPING""}<|im_end|>
+",set_up_shipping_address,SHIPPING,"{""intent"": ""contact_support"", ""category"": ""SERVICE""}","{
+  ""intent"": ""set_up_shipping_address"",
+  ""category"": ""SHIPPING""
+}",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.017937219730941704,0.017937219730941704,1.1434899812145165e-09,False,False
+33,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+need assistance changing the details on my profile<|im_end|>
+<|im_start|>assistant
+{""intent"": ""edit_account"", ""category"": ""ACCOUNT""}<|im_end|>
+",edit_account,ACCOUNT,"{""intent"": ""contact_support"", ""category"": ""SERVICE""}","{
+  ""intent"": ""edit_account"",
+  ""category"": ""ACCOUNT""
+}",corporate_policies/password_reset.md,"# Password Reset
+
+## Scope
+This covers the routine case of a customer who knows their account email but
+has forgotten or wants to change their password. Lockouts, lost email access,
+or suspected compromise follow the account recovery procedure instead.
+
+## Self-Service Flow
+Direct the customer to the ""Forgot password"" link on the sign-in page. A reset
+email is sent to the registered address and the link is valid for 60 minutes
+and single use. Advise checking spam folders and allowing a few minutes for
+delivery.
+
+## Common Failure Points
+- **No email received:** confirm the spelling of the registered address,
+  resend once, and check the address is not an unverified alias.
+- **Link expired or already used:** generate a fresh reset; old links
+  intentionally stop working for security.
+- **Reset succeeds but sign-in still fails:** confirm the customer is using
+  the updated password and not a saved browser autofill of the old one.
+
+## Password Requirements
+Minimum 10 characters with a mix of letter case and at least one number or
+symbol. Reused or breached passwords are rejected. Encourage a password
+manager and two-factor authentication.
+
+## Agent Steps
+1. Confirm the registered email.
+2. Trigger or guide the self-service reset; do not set a password on the
+   customer's behalf.
+3. If delivery fails repeatedly, verify the address health and escalate to
+   account recovery.
+4. Confirm the customer can sign in before closing.
+
+## Communication
+Keep it brief and reassuring. Never ask the customer to send their password,
+and never share a one-time link through an unverified channel.
+",0.015384615384615385,0.015384615384615385,6.714172962122139e-10,0.023076923076923078,0.015384615384615385,7.027289354113406e-10,False,False
+312,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I do not know what I have to do to speak with an operator<|im_end|>
+<|im_start|>assistant
+{""intent"": ""contact_human_agent"", ""category"": ""CONTACT""}<|im_end|>
+",contact_human_agent,CONTACT,"{""intent"": ""request_operator_contact"", ""category"": ""OPERATOR_CONTACT""}","```json
+{
+  ""intent"": ""contact_human_agent"",
+  ""category"": ""CONTACT""
+}
+```",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.008968609865470852,0.008968609865470852,1.0641373328527978e-09,0.008968609865470852,0.008968609865470852,4.260817146967025e-08,False,False
+370,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I have problems entering a different shipping address<|im_end|>
+<|im_start|>assistant
+{""intent"": ""set_up_shipping_address"", ""category"": ""SHIPPING""}<|im_end|>
+",set_up_shipping_address,SHIPPING,"{""intent"": ""contact_support"", ""category"": ""SERVICE""}","```json
+{
+  ""intent"": ""reset_password"",
+  ""category"": ""PASSWORD_RESET""
+}
+```",corporate_policies/password_reset.md,"# Password Reset
+
+## Scope
+This covers the routine case of a customer who knows their account email but
+has forgotten or wants to change their password. Lockouts, lost email access,
+or suspected compromise follow the account recovery procedure instead.
+
+## Self-Service Flow
+Direct the customer to the ""Forgot password"" link on the sign-in page. A reset
+email is sent to the registered address and the link is valid for 60 minutes
+and single use. Advise checking spam folders and allowing a few minutes for
+delivery.
+
+## Common Failure Points
+- **No email received:** confirm the spelling of the registered address,
+  resend once, and check the address is not an unverified alias.
+- **Link expired or already used:** generate a fresh reset; old links
+  intentionally stop working for security.
+- **Reset succeeds but sign-in still fails:** confirm the customer is using
+  the updated password and not a saved browser autofill of the old one.
+
+## Password Requirements
+Minimum 10 characters with a mix of letter case and at least one number or
+symbol. Reused or breached passwords are rejected. Encourage a password
+manager and two-factor authentication.
+
+## Agent Steps
+1. Confirm the registered email.
+2. Trigger or guide the self-service reset; do not set a password on the
+   customer's behalf.
+3. If delivery fails repeatedly, verify the address health and escalate to
+   account recovery.
+4. Confirm the customer can sign in before closing.
+
+## Communication
+Keep it brief and reassuring. Never ask the customer to send their password,
+and never share a one-time link through an unverified channel.
+",0.015384615384615385,0.015384615384615385,6.714172962122139e-10,0.03816793893129771,0.03816793893129771,3.0729005245161016e-08,False,False
+373,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+help me cancel my subscriptiopn to ur newsletter<|im_end|>
+<|im_start|>assistant
+{""intent"": ""newsletter_subscription"", ""category"": ""SUBSCRIPTION""}<|im_end|>
+",newsletter_subscription,SUBSCRIPTION,"{
+  ""intent"": ""cancel_newsletter_subscription"",
+  ""category"": ""NEWSLETTER""
+}",The intent here is related to cancelling a subscription to a newsletter. The category would be under SUBSCRIPTION as it pertains to managing subscriptions.,corporate_policies/password_reset.md,"# Password Reset
+
+## Scope
+This covers the routine case of a customer who knows their account email but
+has forgotten or wants to change their password. Lockouts, lost email access,
+or suspected compromise follow the account recovery procedure instead.
+
+## Self-Service Flow
+Direct the customer to the ""Forgot password"" link on the sign-in page. A reset
+email is sent to the registered address and the link is valid for 60 minutes
+and single use. Advise checking spam folders and allowing a few minutes for
+delivery.
+
+## Common Failure Points
+- **No email received:** confirm the spelling of the registered address,
+  resend once, and check the address is not an unverified alias.
+- **Link expired or already used:** generate a fresh reset; old links
+  intentionally stop working for security.
+- **Reset succeeds but sign-in still fails:** confirm the customer is using
+  the updated password and not a saved browser autofill of the old one.
+
+## Password Requirements
+Minimum 10 characters with a mix of letter case and at least one number or
+symbol. Reused or breached passwords are rejected. Encourage a password
+manager and two-factor authentication.
+
+## Agent Steps
+1. Confirm the registered email.
+2. Trigger or guide the self-service reset; do not set a password on the
+   customer's behalf.
+3. If delivery fails repeatedly, verify the address health and escalate to
+   account recovery.
+4. Confirm the customer can sign in before closing.
+
+## Communication
+Keep it brief and reassuring. Never ask the customer to send their password,
+and never share a one-time link through an unverified channel.
+",0.007662835249042145,0.007662835249042145,6.714172962122139e-10,0.07885304659498207,0.05734767025089606,2.6786374188501934e-07,False,False
+55,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+ohw do I check how soon can I expect the item?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""delivery_period"", ""category"": ""DELIVERY""}<|im_end|>
+",delivery_period,DELIVERY,"{""intent"": ""order_status"", ""category"": ""ORDER_STATUS""}",The expected delivery period for your order is typically between 3 to 7 business days domestically and 10 to 21 business days internationally. Please keep this timeline in mind when planning your purchase.,corporate_policies/shipping_delays.md,"# Shipping Delays
+
+## Scope
+This procedure covers orders that have shipped but are running behind the
+estimated delivery date, as well as orders stuck in a pre-shipment state.
+
+## Standard Timelines
+Domestic orders deliver within 3–7 business days; international orders within
+10–21 business days. An order is only considered ""delayed"" once it has passed
+the upper bound of its quoted window. Carrier scans can lag reality by up to
+24 hours, so a single stale tracking event is not by itself a delay.
+
+## Agent Steps
+1. Confirm the order identifier and the original estimated window.
+2. Check the latest carrier scan and the warehouse dispatch status.
+3. If the parcel is in transit but late, open a carrier trace and tell the
+   customer to expect an update within 24–48 hours.
+4. If the parcel shows no movement for more than 5 business days, treat it as
+   potentially lost and offer a replacement shipment or a full refund.
+5. For weather, customs, or peak-season backlogs, explain the cause and give a
+   realistic revised estimate rather than a guaranteed date.
+
+## Compensation
+For significant delays the customer may be offered expedited reshipment at no
+cost, a shipping-fee refund, or a goodwill credit. Goodwill credit beyond the
+standard threshold requires supervisor approval per the escalation matrix.
+
+## Communication
+Acknowledge the inconvenience, give one clear next step, and avoid promising
+delivery dates that depend on third-party carriers. Always leave the customer
+with a tracking reference and a follow-up timeframe.
+",0.023529411764705882,0.023529411764705882,3.0678837272343194e-09,0.15602836879432624,0.08510638297872342,2.3326771214718026e-05,False,False
+320,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I have got to edit my goddamn account, could you help me?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""edit_account"", ""category"": ""ACCOUNT""}<|im_end|>
+",edit_account,ACCOUNT,"{""intent"": ""contact_support"", ""category"": ""SERVICE""}","```json
+{
+  ""intent"": ""edit_account"",
+  ""category"": ""ACCOUNT""
+}
+```",corporate_policies/password_reset.md,"# Password Reset
+
+## Scope
+This covers the routine case of a customer who knows their account email but
+has forgotten or wants to change their password. Lockouts, lost email access,
+or suspected compromise follow the account recovery procedure instead.
+
+## Self-Service Flow
+Direct the customer to the ""Forgot password"" link on the sign-in page. A reset
+email is sent to the registered address and the link is valid for 60 minutes
+and single use. Advise checking spam folders and allowing a few minutes for
+delivery.
+
+## Common Failure Points
+- **No email received:** confirm the spelling of the registered address,
+  resend once, and check the address is not an unverified alias.
+- **Link expired or already used:** generate a fresh reset; old links
+  intentionally stop working for security.
+- **Reset succeeds but sign-in still fails:** confirm the customer is using
+  the updated password and not a saved browser autofill of the old one.
+
+## Password Requirements
+Minimum 10 characters with a mix of letter case and at least one number or
+symbol. Reused or breached passwords are rejected. Encourage a password
+manager and two-factor authentication.
+
+## Agent Steps
+1. Confirm the registered email.
+2. Trigger or guide the self-service reset; do not set a password on the
+   customer's behalf.
+3. If delivery fails repeatedly, verify the address health and escalate to
+   account recovery.
+4. Confirm the customer can sign in before closing.
+
+## Communication
+Keep it brief and reassuring. Never ask the customer to send their password,
+and never share a one-time link through an unverified channel.
+",0.015384615384615385,0.015384615384615385,6.714172962122139e-10,0.02298850574712644,0.01532567049808429,3.216205668814985e-08,False,False
+246,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+close {{Account Type}} account<|im_end|>
+<|im_start|>assistant
+{""intent"": ""delete_account"", ""category"": ""ACCOUNT""}<|im_end|>
+",delete_account,ACCOUNT,"{""intent"": ""cancel_subscription"", ""category"": ""SUBSCRIPTION""}","```json
+{
+  ""intent"": ""close_account"",
+  ""category"": ""ACCOUNT""
+}
+```",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.02702702702702703,0.018018018018018018,4.5785459911289337e-08,False,False
+113,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I want to update my user profile<|im_end|>
+<|im_start|>assistant
+{""intent"": ""edit_account"", ""category"": ""ACCOUNT""}<|im_end|>
+",edit_account,ACCOUNT,"{""intent"": ""contact_support"", ""category"": ""SERVICE""}","{
+  ""intent"": ""reset_password"",
+  ""category"": ""PASSWORD_RESET""
+}",corporate_policies/password_reset.md,"# Password Reset
+
+## Scope
+This covers the routine case of a customer who knows their account email but
+has forgotten or wants to change their password. Lockouts, lost email access,
+or suspected compromise follow the account recovery procedure instead.
+
+## Self-Service Flow
+Direct the customer to the ""Forgot password"" link on the sign-in page. A reset
+email is sent to the registered address and the link is valid for 60 minutes
+and single use. Advise checking spam folders and allowing a few minutes for
+delivery.
+
+## Common Failure Points
+- **No email received:** confirm the spelling of the registered address,
+  resend once, and check the address is not an unverified alias.
+- **Link expired or already used:** generate a fresh reset; old links
+  intentionally stop working for security.
+- **Reset succeeds but sign-in still fails:** confirm the customer is using
+  the updated password and not a saved browser autofill of the old one.
+
+## Password Requirements
+Minimum 10 characters with a mix of letter case and at least one number or
+symbol. Reused or breached passwords are rejected. Encourage a password
+manager and two-factor authentication.
+
+## Agent Steps
+1. Confirm the registered email.
+2. Trigger or guide the self-service reset; do not set a password on the
+   customer's behalf.
+3. If delivery fails repeatedly, verify the address health and escalate to
+   account recovery.
+4. Confirm the customer can sign in before closing.
+
+## Communication
+Keep it brief and reassuring. Never ask the customer to send their password,
+and never share a one-time link through an unverified channel.
+",0.015384615384615385,0.015384615384615385,6.714172962122139e-10,0.038314176245210725,0.038314176245210725,6.714172962122139e-10,False,False
+266,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+is it possible to create a standard account?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""create_account"", ""category"": ""ACCOUNT""}<|im_end|>
+",create_account,ACCOUNT,"{""intent"": ""login_or_register"", ""category"": ""LOGIN_OR_REGISTER""}","The intent here is to create a standard account, which falls under the category of ACCOUNT creation.",corporate_policies/password_reset.md,"# Password Reset
+
+## Scope
+This covers the routine case of a customer who knows their account email but
+has forgotten or wants to change their password. Lockouts, lost email access,
+or suspected compromise follow the account recovery procedure instead.
+
+## Self-Service Flow
+Direct the customer to the ""Forgot password"" link on the sign-in page. A reset
+email is sent to the registered address and the link is valid for 60 minutes
+and single use. Advise checking spam folders and allowing a few minutes for
+delivery.
+
+## Common Failure Points
+- **No email received:** confirm the spelling of the registered address,
+  resend once, and check the address is not an unverified alias.
+- **Link expired or already used:** generate a fresh reset; old links
+  intentionally stop working for security.
+- **Reset succeeds but sign-in still fails:** confirm the customer is using
+  the updated password and not a saved browser autofill of the old one.
+
+## Password Requirements
+Minimum 10 characters with a mix of letter case and at least one number or
+symbol. Reused or breached passwords are rejected. Encourage a password
+manager and two-factor authentication.
+
+## Agent Steps
+1. Confirm the registered email.
+2. Trigger or guide the self-service reset; do not set a password on the
+   customer's behalf.
+3. If delivery fails repeatedly, verify the address health and escalate to
+   account recovery.
+4. Confirm the customer can sign in before closing.
+
+## Communication
+Keep it brief and reassuring. Never ask the customer to send their password,
+and never share a one-time link through an unverified channel.
+",0.03802281368821293,0.030418250950570346,6.714172962122139e-10,0.0661764705882353,0.051470588235294115,4.73000071074778e-09,False,False
+153,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+need to write a review about ur company how can i do it<|im_end|>
+<|im_start|>assistant
+{""intent"": ""review"", ""category"": ""FEEDBACK""}<|im_end|>
+",review,FEEDBACK,"{""intent"": ""feedback request"", ""category"": ""PRODUCT_REVIEW""}","```json
+{
+  ""intent"": ""feedback"",
+  ""category"": ""FEEDBACK""
+}
+```",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.009009009009009009,0.009009009009009009,2.8344406075722824e-09,0.0,0.0,4.260817146967025e-08,False,False
+76,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+how can I find bill #00108?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""check_invoice"", ""category"": ""INVOICE""}<|im_end|>
+",check_invoice,INVOICE,"{""intent"": ""find_bill_number"", ""category"": ""BILLING""}","The intent here is to check an invoice, specifically looking for bill number 00108. The category would be INVOICE since it pertains to finding information about a specific invoice.",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.018018018018018018,0.018018018018018018,1.1434899812145165e-09,0.07346938775510203,0.0489795918367347,2.013554601404362e-06,False,True
+202,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+assistance to submit a different shipping address<|im_end|>
+<|im_start|>assistant
+{""intent"": ""set_up_shipping_address"", ""category"": ""SHIPPING""}<|im_end|>
+",set_up_shipping_address,SHIPPING,"{""intent"": ""contact_support"", ""category"": ""SERVICE""}","```json
+{
+  ""intent"": ""submit_new_shipping_address"",
+  ""category"": ""shipping""
+}
+```",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.008928571428571428,0.008928571428571428,4.5785459911289337e-08,False,False
+326,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+can you help me leave an opinion foor a product?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""review"", ""category"": ""FEEDBACK""}<|im_end|>
+",review,FEEDBACK,"{""intent"": ""feedback"", ""category"": ""PRODUCT""}","```json
+{
+  ""intent"": ""feedback"",
+  ""category"": ""FEEDBACK""
+}
+```",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.0,0.0,4.260817146967025e-08,False,False
+272,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+need help downloading the invoices from {{Person Name}}<|im_end|>
+<|im_start|>assistant
+{""intent"": ""get_invoice"", ""category"": ""INVOICE""}<|im_end|>
+",get_invoice,INVOICE,"{""intent"": ""download_invoices"", ""category"": ""INVOICE_DOWNLOAD""}","The intent of this query is to get assistance in downloading invoices related to {{Person Name}}, and the category is INVOICE.",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.05907172995780591,0.05063291139240506,2.064197352107077e-06,False,False
+93,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+i have got to see the status of my newsletter subvscription<|im_end|>
+<|im_start|>assistant
+{""intent"": ""newsletter_subscription"", ""category"": ""SUBSCRIPTION""}<|im_end|>
+",newsletter_subscription,SUBSCRIPTION,"{""intent"": ""status_request"", ""category"": ""STATUS""}","```json
+{
+    ""intent"": ""newsletter_subscriptions"",
+    ""category"": ""SUBSCRIPTION""
+}
+```",corporate_policies/password_reset.md,"# Password Reset
+
+## Scope
+This covers the routine case of a customer who knows their account email but
+has forgotten or wants to change their password. Lockouts, lost email access,
+or suspected compromise follow the account recovery procedure instead.
+
+## Self-Service Flow
+Direct the customer to the ""Forgot password"" link on the sign-in page. A reset
+email is sent to the registered address and the link is valid for 60 minutes
+and single use. Advise checking spam folders and allowing a few minutes for
+delivery.
+
+## Common Failure Points
+- **No email received:** confirm the spelling of the registered address,
+  resend once, and check the address is not an unverified alias.
+- **Link expired or already used:** generate a fresh reset; old links
+  intentionally stop working for security.
+- **Reset succeeds but sign-in still fails:** confirm the customer is using
+  the updated password and not a saved browser autofill of the old one.
+
+## Password Requirements
+Minimum 10 characters with a mix of letter case and at least one number or
+symbol. Reused or breached passwords are rejected. Encourage a password
+manager and two-factor authentication.
+
+## Agent Steps
+1. Confirm the registered email.
+2. Trigger or guide the self-service reset; do not set a password on the
+   customer's behalf.
+3. If delivery fails repeatedly, verify the address health and escalate to
+   account recovery.
+4. Confirm the customer can sign in before closing.
+
+## Communication
+Keep it brief and reassuring. Never ask the customer to send their password,
+and never share a one-time link through an unverified channel.
+",0.007692307692307693,0.007692307692307693,6.714172962122139e-10,0.007662835249042145,0.007662835249042145,3.0729005245161016e-08,False,False
+15,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+have a problem with creating my platinum account<|im_end|>
+<|im_start|>assistant
+{""intent"": ""create_account"", ""category"": ""ACCOUNT""}<|im_end|>
+",create_account,ACCOUNT,"{""intent"": ""account_creation_issue"", ""category"": ""ACCOUNT_ISSUES""}","{""intent"": ""create_account"", ""category"": ""ACCOUNT""}",corporate_policies/technical_troubleshooting.md,"# Technical Troubleshooting
+
+## Scope
+Covers product and platform technical issues: app crashes, login failures
+caused by the client, sync errors, broken features, errors on checkout, and
+performance problems. Account access policy questions follow account recovery.
+
+## First-Line Steps
+1. Capture the exact symptom, when it started, and whether it is reproducible.
+2. Record environment: app or browser version, operating system, and device.
+3. Try the standard recovery sequence: update to the latest version, restart
+   the app, clear cache, and retry on another network or device.
+4. Confirm whether the issue is account-specific or affects all users (check
+   the status dashboard for a known incident).
+
+## Crashes And Errors
+For repeatable crashes, collect the action that triggers it and any error
+code or screenshot. For checkout or payment errors, do not retry charges
+repeatedly — confirm whether any charge actually posted before advising a
+second attempt.
+
+## Data And Sync
+If data is missing or not syncing, avoid destructive steps (reinstall,
+account reset) until a backup or server-side copy is confirmed, to prevent
+permanent loss.
+
+## Escalation To Engineering
+Escalate when: the issue is reproducible after first-line steps, multiple
+customers report the same symptom, data loss is involved, or a security flaw
+is suspected. Provide the reproduction steps, environment, and timestamps so
+engineering can act without re-contacting the customer.
+
+## Communication
+Give one clear instruction at a time, set expectations for investigation
+time, and never blame the customer. Follow the escalation matrix for severity
+and routing.
+",0.032,0.032,1.0641373328527978e-09,0.016129032258064516,0.016129032258064516,1.1434899812145165e-09,False,False
+124,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+what do I need to do to see bill #37777?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""check_invoice"", ""category"": ""INVOICE""}<|im_end|>
+",check_invoice,INVOICE,"{""intent"": ""request_invoice_status"", ""category"": ""INVOICE_STATUS""}","To check your invoice number 37777, please provide your order ID or any other unique identifier associated with this invoice. Once you have that information, we can assist you in locating it. Please note that we cannot access internal systems directly from our platform.",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.017937219730941704,0.017937219730941704,1.0641373328527978e-09,0.023076923076923075,0.023076923076923075,4.544850394197931e-05,False,True
+232,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+updating information on {{Account Category}} account<|im_end|>
+<|im_start|>assistant
+{""intent"": ""edit_account"", ""category"": ""ACCOUNT""}<|im_end|>
+",edit_account,ACCOUNT,"{""intent"": ""update_information"", ""category"": ""ACCOUNT_UPDATE""}","```json
+{
+  ""intent"": ""update_account_information"",
+  ""category"": ""ACCOUNT""
+}
+```",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.009009009009009009,0.009009009009009009,1.0641373328527978e-09,0.017937219730941704,0.017937219730941704,4.5785459911289337e-08,False,False
+0,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+need help to shop several of ur item<|im_end|>
+<|im_start|>assistant
+{""intent"": ""place_order"", ""category"": ""ORDER""}<|im_end|>
+",place_order,ORDER,"{""intent"": ""contact_support"", ""category"": ""SERVICE""}","{
+  ""intent"": ""place_order"",
+  ""category"": ""ORDER""
+}",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.0,0.0,1.0641373328527978e-09,False,False
+194,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+can you help me obtaining refunds?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""get_refund"", ""category"": ""REFUND""}<|im_end|>
+",get_refund,REFUND,"{""intent"": ""refund_information_request"", ""category"": ""SERVICE_INFORMATION""}","```json
+{
+  ""intent"": ""refund"",
+  ""category"": ""refund_policy""
+}
+```",corporate_policies/refund_policy.md,"# Refund Policy
+
+## Eligibility
+Customers may request a refund within 30 days of the original purchase or
+delivery date, whichever is later. To be eligible, the item must be unused or
+defective, and the request must reference a valid order identifier. Digital
+goods and subscription fees already consumed are non-refundable except where
+required by local consumer law.
+
+## Refund Methods
+Approved refunds are issued to the original payment method. If the original
+card or wallet is no longer active, store credit of equal value is offered as
+an alternative. Cash refunds are not provided for online orders.
+
+## Processing Time
+Once a refund is approved, the amount is released within 5–7 business days.
+Bank or card-network posting can add a further 3–5 business days, so advise
+customers that the full cycle may take up to 12 business days. Duplicate or
+accidental charges are prioritized and typically reversed within 3 business
+days.
+
+## Partial Refunds
+Partial refunds apply when only some items in an order are returned, when a
+promotional discount must be recalculated, or when a restocking deduction
+applies to opened non-defective goods. Defective items are always refunded in
+full, including original shipping.
+
+## Agent Steps
+1. Verify the order identifier and purchase date.
+2. Confirm the item condition and refund reason.
+3. Check for prior refunds on the same order to avoid double processing.
+4. Submit the refund and share the expected timeline above.
+5. Log the reason code for reporting.
+
+## Escalation
+If the customer disputes a denied refund, or the amount exceeds standard
+agent authority, route the case to a supervisor using the escalation matrix.
+Never promise an exact posting date controlled by the customer's bank.
+",0.013986013986013986,0.013986013986013986,2.6444138047206387e-10,0.02105263157894737,0.014035087719298246,1.623295463573147e-08,False,False
+368,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+help me checking what shipment methods I have<|im_end|>
+<|im_start|>assistant
+{""intent"": ""delivery_options"", ""category"": ""DELIVERY""}<|im_end|>
+",delivery_options,DELIVERY,"{""intent"": ""shipping_information"", ""category"": ""SHIPPING""}","The intent here is to inquire about available shipment options, which falls under the category of DELIVERY.",corporate_policies/shipping_delays.md,"# Shipping Delays
+
+## Scope
+This procedure covers orders that have shipped but are running behind the
+estimated delivery date, as well as orders stuck in a pre-shipment state.
+
+## Standard Timelines
+Domestic orders deliver within 3–7 business days; international orders within
+10–21 business days. An order is only considered ""delayed"" once it has passed
+the upper bound of its quoted window. Carrier scans can lag reality by up to
+24 hours, so a single stale tracking event is not by itself a delay.
+
+## Agent Steps
+1. Confirm the order identifier and the original estimated window.
+2. Check the latest carrier scan and the warehouse dispatch status.
+3. If the parcel is in transit but late, open a carrier trace and tell the
+   customer to expect an update within 24–48 hours.
+4. If the parcel shows no movement for more than 5 business days, treat it as
+   potentially lost and offer a replacement shipment or a full refund.
+5. For weather, customs, or peak-season backlogs, explain the cause and give a
+   realistic revised estimate rather than a guaranteed date.
+
+## Compensation
+For significant delays the customer may be offered expedited reshipment at no
+cost, a shipping-fee refund, or a goodwill credit. Goodwill credit beyond the
+standard threshold requires supervisor approval per the escalation matrix.
+
+## Communication
+Acknowledge the inconvenience, give one clear next step, and avoid promising
+delivery dates that depend on third-party carriers. Always leave the customer
+with a tracking reference and a follow-up timeframe.
+",0.015748031496062992,0.015748031496062992,3.2966556076167357e-09,0.05263157894736842,0.045112781954887216,2.011105038469494e-08,False,False
+181,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+i call to check when my parcel is gonna arive<|im_end|>
+<|im_start|>assistant
+{""intent"": ""delivery_period"", ""category"": ""DELIVERY""}<|im_end|>
+",delivery_period,DELIVERY,"{""intent"": ""order_status"", ""category"": ""ORDER_STATUS""}",The intent of your query is to inquire about the delivery period of your parcel. The category under which this falls is DELIVERY.,corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.009009009009009009,0.009009009009009009,1.0641373328527978e-09,0.04184100418410042,0.04184100418410042,2.320465442562898e-07,False,False
+78,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I want to check when my item is going to arrive<|im_end|>
+<|im_start|>assistant
+{""intent"": ""delivery_period"", ""category"": ""DELIVERY""}<|im_end|>
+",delivery_period,DELIVERY,"{""intent"": ""order_status"", ""category"": ""ORDER_STATUS""}",The intent of your query is to inquire about the delivery period of your order. This falls under the category of DELIVERY in our escalation matrix.,corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.009009009009009009,0.009009009009009009,1.0641373328527978e-09,0.05785123966942149,0.04132231404958678,1.3911459944322188e-06,False,False
+131,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+problem with {{Account Type}} account removals<|im_end|>
+<|im_start|>assistant
+{""intent"": ""delete_account"", ""category"": ""ACCOUNT""}<|im_end|>
+",delete_account,ACCOUNT,"{""intent"": ""create_account"", ""category"": ""ACCOUNT""}","{""intent"": ""delete_account"", ""category"": ""ACCOUNT""}",corporate_policies/technical_troubleshooting.md,"# Technical Troubleshooting
+
+## Scope
+Covers product and platform technical issues: app crashes, login failures
+caused by the client, sync errors, broken features, errors on checkout, and
+performance problems. Account access policy questions follow account recovery.
+
+## First-Line Steps
+1. Capture the exact symptom, when it started, and whether it is reproducible.
+2. Record environment: app or browser version, operating system, and device.
+3. Try the standard recovery sequence: update to the latest version, restart
+   the app, clear cache, and retry on another network or device.
+4. Confirm whether the issue is account-specific or affects all users (check
+   the status dashboard for a known incident).
+
+## Crashes And Errors
+For repeatable crashes, collect the action that triggers it and any error
+code or screenshot. For checkout or payment errors, do not retry charges
+repeatedly — confirm whether any charge actually posted before advising a
+second attempt.
+
+## Data And Sync
+If data is missing or not syncing, avoid destructive steps (reinstall,
+account reset) until a backup or server-side copy is confirmed, to prevent
+permanent loss.
+
+## Escalation To Engineering
+Escalate when: the issue is reproducible after first-line steps, multiple
+customers report the same symptom, data loss is involved, or a security flaw
+is suspected. Provide the reproduction steps, environment, and timestamps so
+engineering can act without re-contacting the customer.
+
+## Communication
+Give one clear instruction at a time, set expectations for investigation
+time, and never blame the customer. Follow the escalation matrix for severity
+and routing.
+",0.016129032258064516,0.016129032258064516,1.1434899812145165e-09,0.016129032258064516,0.016129032258064516,1.1434899812145165e-09,False,False
+126,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+can you help me see the early exit penalties?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""check_cancellation_fee"", ""category"": ""CANCEL""}<|im_end|>
+",check_cancellation_fee,CANCEL,"{""intent"": ""view_penalty_details"", ""category"": ""PENALTY""}","The cancellation fee category in your query indicates that you're looking for information about early exit penalties related to cancellations. This typically involves understanding any fees associated with canceling a service before its scheduled end date. If you need more specific details on this topic, please provide additional context or clarify what type of cancellation (e.g., early termination) you're interested in.",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.04285714285714286,0.03571428571428571,0.00018465475562212924,False,False
+271,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+i dont know how to cancel purchase {{Order Number}}<|im_end|>
+<|im_start|>assistant
+{""intent"": ""cancel_order"", ""category"": ""ORDER""}<|im_end|>
+",cancel_order,ORDER,"{""intent"": ""contact_support"", ""category"": ""SERVICE""}","{""intent"": ""cancel_order"", ""category"": ""ORDER""}",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.0,0.0,1.0641373328527978e-09,False,False
+245,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+where to file a customer reclamation against your company ?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""complaint"", ""category"": ""FEEDBACK""}<|im_end|>
+",complaint,FEEDBACK,"{""intent"": ""feedback request"", ""category"": ""RECLAMATION""}","{""intent"": ""complaint"", ""category"": ""FEEDBACK""}",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.00904977375565611,0.00904977375565611,2.8344406075722824e-09,0.0,0.0,1.0641373328527978e-09,False,False
+331,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+show cancellation charges<|im_end|>
+<|im_start|>assistant
+{""intent"": ""check_cancellation_fee"", ""category"": ""CANCEL""}<|im_end|>
+",check_cancellation_fee,CANCEL,"{""intent"": ""cancel_service"", ""category"": ""SERVICE_CANCELLATION""}","The intent of your query is to check the cancellation fee, and the category is CANCEL.",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.051724137931034475,0.051724137931034475,1.2676003753434862e-08,False,False
+379,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+help checking the withdrawal penalties<|im_end|>
+<|im_start|>assistant
+{""intent"": ""check_cancellation_fee"", ""category"": ""CANCEL""}<|im_end|>
+",check_cancellation_fee,CANCEL,"{
+  ""intent"": ""withdrawal_penalty_check"",
+  ""category"": ""FEE""
+}","The intent of your query is to check the cancellation fee associated with a withdrawal. This falls under the category of CANCEL in our escalation matrix, indicating that it's related to a refund or cancellation process.",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.10276679841897232,0.06324110671936758,3.116454479076809e-05,False,False
+46,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+what do I need to do to check the shipment options?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""delivery_options"", ""category"": ""DELIVERY""}<|im_end|>
+",delivery_options,DELIVERY,"{""intent"": ""shipping_information_request"", ""category"": ""SHIPPING""}","To check your shipment options, please visit our website's ""My Account"" section where you will find detailed information about your current shipments including available delivery methods and any special offers or promotions. You can also contact our customer service directly if you need further assistance.",corporate_policies/shipping_delays.md,"# Shipping Delays
+
+## Scope
+This procedure covers orders that have shipped but are running behind the
+estimated delivery date, as well as orders stuck in a pre-shipment state.
+
+## Standard Timelines
+Domestic orders deliver within 3–7 business days; international orders within
+10–21 business days. An order is only considered ""delayed"" once it has passed
+the upper bound of its quoted window. Carrier scans can lag reality by up to
+24 hours, so a single stale tracking event is not by itself a delay.
+
+## Agent Steps
+1. Confirm the order identifier and the original estimated window.
+2. Check the latest carrier scan and the warehouse dispatch status.
+3. If the parcel is in transit but late, open a carrier trace and tell the
+   customer to expect an update within 24–48 hours.
+4. If the parcel shows no movement for more than 5 business days, treat it as
+   potentially lost and offer a replacement shipment or a full refund.
+5. For weather, customs, or peak-season backlogs, explain the cause and give a
+   realistic revised estimate rather than a guaranteed date.
+
+## Compensation
+For significant delays the customer may be offered expedited reshipment at no
+cost, a shipping-fee refund, or a goodwill credit. Goodwill credit beyond the
+standard threshold requires supervisor approval per the escalation matrix.
+
+## Communication
+Acknowledge the inconvenience, give one clear next step, and avoid promising
+delivery dates that depend on third-party carriers. Always leave the customer
+with a tracking reference and a follow-up timeframe.
+",0.01568627450980392,0.01568627450980392,3.2966556076167357e-09,0.07457627118644068,0.047457627118644076,7.95217324564915e-05,False,False
+223,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I want to make a consumer claim<|im_end|>
+<|im_start|>assistant
+{""intent"": ""complaint"", ""category"": ""FEEDBACK""}<|im_end|>
+",complaint,FEEDBACK,"{""intent"": ""request"", ""category"": ""PRODUCT""}","{""intent"": ""feedback"", ""category"": ""FEEDBACK""}",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.00909090909090909,0.00909090909090909,1.1434899812145165e-09,0.0,0.0,1.0641373328527978e-09,False,False
+72,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+i do not know how i can see the cancellation charge<|im_end|>
+<|im_start|>assistant
+{""intent"": ""check_cancellation_fee"", ""category"": ""CANCEL""}<|im_end|>
+",check_cancellation_fee,CANCEL,"{""intent"": ""cancel_confirmation"", ""category"": ""CANCEL""}",The intent here seems to be related to checking if there was a cancellation fee applied to a transaction. The category would typically fall under CANCEL since it involves canceling a service or product.,corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.00904977375565611,0.00904977375565611,1.0641373328527978e-09,0.072,0.072,1.1861027886580085e-05,False,False
+282,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I am waiting for a reimbursement of {{Refund Amount}} dollars<|im_end|>
+<|im_start|>assistant
+{""intent"": ""track_refund"", ""category"": ""REFUND""}<|im_end|>
+",track_refund,REFUND,"{""intent"": ""request_payment_confirmation"", ""category"": ""PAYMENT""}","{""intent"": ""refund_request"", ""category"": ""REFUND""}",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.036036036036036036,0.018018018018018018,1.1434899812145165e-09,0.01809954751131222,0.01809954751131222,1.0641373328527978e-09,False,False
+77,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+i do not know what i have to do to ask for a rebate of money<|im_end|>
+<|im_start|>assistant
+{""intent"": ""get_refund"", ""category"": ""REFUND""}<|im_end|>
+",get_refund,REFUND,"{""intent"": ""request_discount"", ""category"": ""DISCOUNT""}","The intent here is to get a refund, which falls under the category of REFUND.",corporate_policies/refund_policy.md,"# Refund Policy
+
+## Eligibility
+Customers may request a refund within 30 days of the original purchase or
+delivery date, whichever is later. To be eligible, the item must be unused or
+defective, and the request must reference a valid order identifier. Digital
+goods and subscription fees already consumed are non-refundable except where
+required by local consumer law.
+
+## Refund Methods
+Approved refunds are issued to the original payment method. If the original
+card or wallet is no longer active, store credit of equal value is offered as
+an alternative. Cash refunds are not provided for online orders.
+
+## Processing Time
+Once a refund is approved, the amount is released within 5–7 business days.
+Bank or card-network posting can add a further 3–5 business days, so advise
+customers that the full cycle may take up to 12 business days. Duplicate or
+accidental charges are prioritized and typically reversed within 3 business
+days.
+
+## Partial Refunds
+Partial refunds apply when only some items in an order are returned, when a
+promotional discount must be recalculated, or when a restocking deduction
+applies to opened non-defective goods. Defective items are always refunded in
+full, including original shipping.
+
+## Agent Steps
+1. Verify the order identifier and purchase date.
+2. Confirm the item condition and refund reason.
+3. Check for prior refunds on the same order to avoid double processing.
+4. Submit the refund and share the expected timeline above.
+5. Log the reason code for reporting.
+
+## Escalation
+If the customer disputes a denied refund, or the amount exceeds standard
+agent authority, route the case to a supervisor using the escalation matrix.
+Never promise an exact posting date controlled by the customer's bank.
+",0.01408450704225352,0.01408450704225352,3.1447557115852016e-10,0.054421768707482984,0.054421768707482984,9.944590733432795e-10,False,False
+363,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+open another premium account for mum<|im_end|>
+<|im_start|>assistant
+{""intent"": ""create_account"", ""category"": ""ACCOUNT""}<|im_end|>
+",create_account,ACCOUNT,"{""intent"": ""request_service"", ""category"": ""SERVICE""}","{""intent"": ""create_account"", ""category"": ""ACCOUNT""}",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.00904977375565611,0.00904977375565611,1.0641373328527978e-09,0.01809954751131222,0.01809954751131222,1.1434899812145165e-09,False,False
+25,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+can you help me report troubles with payment?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""payment_issue"", ""category"": ""PAYMENT""}<|im_end|>
+",payment_issue,PAYMENT,"{""intent"": ""customer_service_request"", ""category"": ""SERVICE""}",The intent of your query is related to payment issues. The category under which this falls is PAYMENT.,corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.018018018018018018,0.018018018018018018,1.0641373328527978e-09,0.05128205128205128,0.042735042735042736,1.5646516650241772e-08,False,False
+108,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I don't know how I can talk to cstomer support<|im_end|>
+<|im_start|>assistant
+{""intent"": ""contact_customer_service"", ""category"": ""CONTACT""}<|im_end|>
+",contact_customer_service,CONTACT,"{""intent"": ""request_support"", ""category"": ""SERVICE_REQUEST""}","```json
+{
+  ""intent"": ""contact_customer_service"",
+  ""category"": ""CONTACT""
+}
+```",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.009009009009009009,0.009009009009009009,1.0641373328527978e-09,0.008968609865470852,0.008968609865470852,4.260817146967025e-08,False,False
+165,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+error with sign-up<|im_end|>
+<|im_start|>assistant
+{""intent"": ""registration_problems"", ""category"": ""ACCOUNT""}<|im_end|>
+",registration_problems,ACCOUNT,"{""intent"": ""account_creation_issues"", ""category"": ""ACCOUNT""}","```json
+{
+  ""intent"": ""registration_problems"",
+  ""category"": ""ACCOUNT""
+}
+```",corporate_policies/password_reset.md,"# Password Reset
+
+## Scope
+This covers the routine case of a customer who knows their account email but
+has forgotten or wants to change their password. Lockouts, lost email access,
+or suspected compromise follow the account recovery procedure instead.
+
+## Self-Service Flow
+Direct the customer to the ""Forgot password"" link on the sign-in page. A reset
+email is sent to the registered address and the link is valid for 60 minutes
+and single use. Advise checking spam folders and allowing a few minutes for
+delivery.
+
+## Common Failure Points
+- **No email received:** confirm the spelling of the registered address,
+  resend once, and check the address is not an unverified alias.
+- **Link expired or already used:** generate a fresh reset; old links
+  intentionally stop working for security.
+- **Reset succeeds but sign-in still fails:** confirm the customer is using
+  the updated password and not a saved browser autofill of the old one.
+
+## Password Requirements
+Minimum 10 characters with a mix of letter case and at least one number or
+symbol. Reused or breached passwords are rejected. Encourage a password
+manager and two-factor authentication.
+
+## Agent Steps
+1. Confirm the registered email.
+2. Trigger or guide the self-service reset; do not set a password on the
+   customer's behalf.
+3. If delivery fails repeatedly, verify the address health and escalate to
+   account recovery.
+4. Confirm the customer can sign in before closing.
+
+## Communication
+Keep it brief and reassuring. Never ask the customer to send their password,
+and never share a one-time link through an unverified channel.
+",0.02298850574712644,0.01532567049808429,7.027289354113406e-10,0.01532567049808429,0.01532567049808429,3.216205668814985e-08,False,False
+140,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I need assistance to restore the password of my profile<|im_end|>
+<|im_start|>assistant
+{""intent"": ""recover_password"", ""category"": ""ACCOUNT""}<|im_end|>
+",recover_password,ACCOUNT,"{""intent"": ""reset_password"", ""category"": ""PASSWORD_RESET""}","```json
+{
+  ""intent"": ""recover_password"",
+  ""category"": ""ACCOUNT""
+}
+```",corporate_policies/password_reset.md,"# Password Reset
+
+## Scope
+This covers the routine case of a customer who knows their account email but
+has forgotten or wants to change their password. Lockouts, lost email access,
+or suspected compromise follow the account recovery procedure instead.
+
+## Self-Service Flow
+Direct the customer to the ""Forgot password"" link on the sign-in page. A reset
+email is sent to the registered address and the link is valid for 60 minutes
+and single use. Advise checking spam folders and allowing a few minutes for
+delivery.
+
+## Common Failure Points
+- **No email received:** confirm the spelling of the registered address,
+  resend once, and check the address is not an unverified alias.
+- **Link expired or already used:** generate a fresh reset; old links
+  intentionally stop working for security.
+- **Reset succeeds but sign-in still fails:** confirm the customer is using
+  the updated password and not a saved browser autofill of the old one.
+
+## Password Requirements
+Minimum 10 characters with a mix of letter case and at least one number or
+symbol. Reused or breached passwords are rejected. Encourage a password
+manager and two-factor authentication.
+
+## Agent Steps
+1. Confirm the registered email.
+2. Trigger or guide the self-service reset; do not set a password on the
+   customer's behalf.
+3. If delivery fails repeatedly, verify the address health and escalate to
+   account recovery.
+4. Confirm the customer can sign in before closing.
+
+## Communication
+Keep it brief and reassuring. Never ask the customer to send their password,
+and never share a one-time link through an unverified channel.
+",0.038314176245210725,0.038314176245210725,6.714172962122139e-10,0.02298850574712644,0.02298850574712644,3.216205668814985e-08,False,False
+321,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I do not know what I have to do to chat with a human agent<|im_end|>
+<|im_start|>assistant
+{""intent"": ""contact_human_agent"", ""category"": ""CONTACT""}<|im_end|>
+",contact_human_agent,CONTACT,"{""intent"": ""request_human_interaction"", ""category"": ""SERVICE""}","```json
+{
+  ""intent"": ""contact_human_agent"",
+  ""category"": ""CONTACT""
+}
+```",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.009009009009009009,0.009009009009009009,1.0641373328527978e-09,0.008968609865470852,0.008968609865470852,4.260817146967025e-08,False,False
+90,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+how can I check the available payment modalities?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""check_payment_methods"", ""category"": ""PAYMENT""}<|im_end|>
+",check_payment_methods,PAYMENT,"{""intent"": ""request_information"", ""category"": ""INFORMATION_REQUEST""}",The intent of your query is to check the available payment modalities. The category under which this falls is PAYMENT.,corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.009009009009009009,0.009009009009009009,1.0641373328527978e-09,0.059322033898305086,0.05084745762711864,5.6075507210656846e-08,False,False
+352,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+are the charges of ur services reimbursable<|im_end|>
+<|im_start|>assistant
+{""intent"": ""check_refund_policy"", ""category"": ""REFUND""}<|im_end|>
+",check_refund_policy,REFUND,"{""intent"": ""request_reimbursement_information"", ""category"": ""REIMBURSEMENT""}","The refund policy for our services is as follows:
+
+- For minor issues, we offer a $50 credit towards future purchases within 7 days.
+- For major issues, we provide a full refund if you contact us within 30 days after purchase.
+
+Please let me know which option best suits your situation.",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.009009009009009009,0.009009009009009009,1.0641373328527978e-09,0.08270676691729324,0.05263157894736842,0.00019166257487107107,False,True
+301,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+i try to chat with a live agent<|im_end|>
+<|im_start|>assistant
+{""intent"": ""contact_human_agent"", ""category"": ""CONTACT""}<|im_end|>
+",contact_human_agent,CONTACT,"{""intent"": ""request_support"", ""category"": ""SERVICE_REQUEST""}","```json
+{
+  ""intent"": ""contact_human_agent"",
+  ""category"": ""CONTACT""
+}
+```",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.009009009009009009,0.009009009009009009,1.0641373328527978e-09,0.008968609865470852,0.008968609865470852,4.260817146967025e-08,False,False
+39,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+how can I purchase several of your article?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""place_order"", ""category"": ""ORDER""}<|im_end|>
+",place_order,ORDER,"{""intent"": ""purchase_multiple_items"", ""category"": ""PRODUCT_PURCHASE""}",The intent here is to place an order for multiple articles from the company. The category would be related to ordering products.,corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.06722689075630252,0.050420168067226885,1.6153067393428962e-07,False,False
+56,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+I want help speaking to customer service<|im_end|>
+<|im_start|>assistant
+{""intent"": ""contact_customer_service"", ""category"": ""CONTACT""}<|im_end|>
+",contact_customer_service,CONTACT,"{""intent"": ""request_support"", ""category"": ""SERVICE_REQUEST""}","```json
+{
+  ""intent"": ""contact_customer_service"",
+  ""category"": ""CONTACT""
+}
+```",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.009009009009009009,0.009009009009009009,1.0641373328527978e-09,0.008968609865470852,0.008968609865470852,4.260817146967025e-08,False,False
+258,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+i need help to get my invoices from {{Person Name}}<|im_end|>
+<|im_start|>assistant
+{""intent"": ""get_invoice"", ""category"": ""INVOICE""}<|im_end|>
+",get_invoice,INVOICE,"{""intent"": ""contact_support"", ""category"": ""SERVICE_ISSUE""}","```json
+{
+  ""intent"": ""get_invoice"",
+  ""category"": ""INVOICE""
+}
+```",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.009009009009009009,0.009009009009009009,4.260817146967025e-08,False,False
+148,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+can you help me seeing when my product is going to arrive?<|im_end|>
+<|im_start|>assistant
+{""intent"": ""delivery_period"", ""category"": ""DELIVERY""}<|im_end|>
+",delivery_period,DELIVERY,"{""intent"": ""product_status"", ""category"": ""PRODUCT_STATUS""}",The intent here is to inquire about the expected delivery period of your product. The category under which this query falls is DELIVERY.,corporate_policies/shipping_delays.md,"# Shipping Delays
+
+## Scope
+This procedure covers orders that have shipped but are running behind the
+estimated delivery date, as well as orders stuck in a pre-shipment state.
+
+## Standard Timelines
+Domestic orders deliver within 3–7 business days; international orders within
+10–21 business days. An order is only considered ""delayed"" once it has passed
+the upper bound of its quoted window. Carrier scans can lag reality by up to
+24 hours, so a single stale tracking event is not by itself a delay.
+
+## Agent Steps
+1. Confirm the order identifier and the original estimated window.
+2. Check the latest carrier scan and the warehouse dispatch status.
+3. If the parcel is in transit but late, open a carrier trace and tell the
+   customer to expect an update within 24–48 hours.
+4. If the parcel shows no movement for more than 5 business days, treat it as
+   potentially lost and offer a replacement shipment or a full refund.
+5. For weather, customs, or peak-season backlogs, explain the cause and give a
+   realistic revised estimate rather than a guaranteed date.
+
+## Compensation
+For significant delays the customer may be offered expedited reshipment at no
+cost, a shipping-fee refund, or a goodwill credit. Goodwill credit beyond the
+standard threshold requires supervisor approval per the escalation matrix.
+
+## Communication
+Acknowledge the inconvenience, give one clear next step, and avoid promising
+delivery dates that depend on third-party carriers. Always leave the customer
+with a tracking reference and a follow-up timeframe.
+",0.00784313725490196,0.00784313725490196,3.0678837272343194e-09,0.08088235294117647,0.051470588235294115,5.454914320345343e-07,False,False
+118,"<|im_start|>system
+You are a customer support classification assistant. Given a user instruction, respond strictly with a JSON object containing 'intent' and 'category'.<|im_end|>
+<|im_start|>user
+updating purchase {{Order Number}}<|im_end|>
+<|im_start|>assistant
+{""intent"": ""change_order"", ""category"": ""ORDER""}<|im_end|>
+",change_order,ORDER,"{""intent"": ""contact_support"", ""category"": ""SERVICE""}","```json
+{
+  ""intent"": ""update_purchase"",
+  ""category"": ""PURCHASE""
+}
+```",corporate_policies/escalation_matrix.md,"# Escalation Matrix
+
+## Purpose
+Defines when and how to move a case beyond a first-line agent so customers
+get the right authority quickly without unnecessary hand-offs.
+
+## Severity Levels
+- **P1 — Critical:** confirmed account takeover, payment fraud, data breach,
+  or a widespread outage. Escalate immediately to the security or incident
+  queue; do not wait for the customer to follow up.
+- **P2 — High:** data loss risk, repeated failed resolution, high-value
+  dispute, legal or regulatory mention, or a vulnerable customer. Route to a
+  supervisor the same business day.
+- **P3 — Medium:** standard dispute above agent authority, policy exception
+  request, or a reproducible technical bug. Queue to the relevant specialist
+  team.
+- **P4 — Low:** routine question answerable with existing procedures. No
+  escalation.
+
+## Authority Limits
+First-line agents may approve refunds, goodwill credits, and shipping waivers
+up to the standard threshold. Amounts above the threshold, policy exceptions,
+and chargeback conflicts require supervisor approval.
+
+## Routing
+- Billing and payment conflicts → billing supervisor.
+- Account takeover and fraud → security queue.
+- Reproducible bugs and data loss → engineering.
+- Legal, press, or regulatory mentions → escalations lead, no substantive
+  reply until cleared.
+
+## Handing Off
+Include a concise summary, verified identity status, actions already taken,
+and the desired outcome. Tell the customer who will follow up and by when.
+Never close a case as resolved while an escalation is still open.
+",0.0,0.0,1.0641373328527978e-09,0.0,0.0,4.260817146967025e-08,False,False
